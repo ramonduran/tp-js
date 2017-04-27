@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular média aula JS!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css"> 
+		.container { max-width: 600px; } 
+		#resultado { font-size: 30px; text-align: center; margin-top: 20px; background: black; color: white; }
+	</style>
+</head>
+<body class="container">
+	<ul class="nav nav-tabs">
+	  <li><a href="index.html">1. Nome Ninja</a></li>
+	  <li><a href="index-2.html">2. Nome de Terror</a></li>
+	  <li><a href="index-3.html">3. Jogo do Sim ou Não</a></li>
+	  <li><a href="index-4.html">4. Calcular média aula JS</a></li>
+	  <li><a href="index-5.html">5. Descobrir ano chinês</a></li>
+	</ul>
+	
+	<h2>Calcular média aula JS!</h2><br> 
+	
+	<form onsubmit="return false;">
+		<div class="form-group">
+			<label>Nota P1: </label>
+			<input class="form-control" id="p1" type="number" min="0" max="10">
+		</div>
+		<div class="form-group">
+			<label>Nota P2: </label>
+			<input class="form-control" id="p2" type="number" min="0" max="10">
+		</div>
+		<div class="form-group">
+			<label>Nota TP: </label>
+			<input class="form-control" id="tp" type="number" min="0" max="10">
+		</div>
+	  <button type="submit" class="btn btn-primary" onclick="calcularMedia()">Calcular média</button>
+	</form>
+	
+	<div id="resultado"></div>
+	
+<script type="text/javascript">
+
+/*
+ * Função para calcular Media.
+ */
+function calcularMedia(){
+	var p1 = document.getElementById("p1").value * 0.4;
+	var p2 = document.getElementById("p2").value * 0.4;
+	var tp = document.getElementById("tp").value * 0.2;
+	
+	if (p1<0 || p1>10 || p2<0 || p2>10 || tp<0 || tp>10) { 
+	   document.getElementById("resultado").innerHTML = "As notas deverão ser de 0 a 10";
+	   return false;
+	}
+	
+	var nota = p1+p2+tp;
+	
+	if ( nota >= 6 ){
+	    var resultado = "APROVADO com nota " + nota;
+	} else {
+	    var resultado = "ALUNO DE P3 com nota " + nota
+	}
+ 
+	document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+	
+</body>
+</html>
