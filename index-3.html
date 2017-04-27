@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular média aula JS!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css"> 
+		.container { max-width: 600px; } 
+		#resultado { font-size: 30px; text-align: center; margin-top: 20px; background: black; color: white; }
+		#coisa1,
+		#coisa2 {
+			color: blue;
+			width: 300px;
+			display: block;
+			padding: 10px;
+			margin: 5px 0;
+		}
+	</style>
+</head>
+<body class="container">
+	<ul class="nav nav-tabs">
+	  <li><a href="index.html">1. Nome Ninja</a></li>
+	  <li><a href="index-2.html">2. Nome de Terror</a></li>
+	  <li><a href="index-3.html">3. Jogo do Sim ou Não</a></li>
+	  <li><a href="index-4.html">4. Calcular média aula JS</a></li>
+	  <li><a href="index-5.html">5. Descobrir ano chinês</a></li>
+	</ul>
+	
+	<h2>Jogo do Sim ou Não!</h2><br>
+	
+	<div class="well">
+		<h4>Você quer trocar uma(a) <span id="coisa1">COISA 1</span> por um(a) <span id="coisa2">COISA 2</span>?</h4>
+	</div>
+	
+	<form onsubmit="return false;">
+	  <button type="submit" class="btn btn-lg btn-block btn-danger" onclick="respondeu()">Não</button>
+	  <button type="submit" class="btn btn-lg btn-block btn-success" onclick="respondeu()">Sim</button>
+	</form>
+	
+	<div id="resultado"></div>
+	
+<script type="text/javascript">
+
+/*
+ * Função respondeu sim ou não.
+ */
+function respondeu(){
+	var items = ['XBOX', 'PANELA SEM TAMPA', 'CASA NA PRAIA', 'IO-IO', 'COLAR DO TITANIC', 'EMPREGO DE 75 MIL REAIS POR HORA', 'DIPLOMA DA FATEC', 'LIVRO DE PHP', 'LIVRO DE JS', 'COMPUTADOR', 'VIAGEM PARA DISNEY', 'CHICLETE MASTIGADO', 'PILHA DESCARREGADA', 'VIAGEM PARA LUA', 'MURO DO MEXICO', 'PERUCA', 'NAVIO', 'GUARDA CHUVA FURADO', 'PORSCHE', 'VACA QUE NÃO DÁ LEITE', 'CASCA DE OVO', 'UMA NAVE ESPACIAL']
+
+	document.getElementById("coisa1").innerHTML = items[Math.floor(Math.random()*items.length)];
+	document.getElementById("coisa2").innerHTML = items[Math.floor(Math.random()*items.length)];
+	
+	setTimeout( function() { esconderCoisas() }, 7000);
+}
+
+/*
+ * Função para esconder coisas.
+ */
+function esconderCoisas(){
+	document.getElementById("coisa1").innerHTML = 'COISA 1';
+	document.getElementById("coisa2").innerHTML = 'COISA 2';
+}
+</script>
+	
+</body>
+</html>
