@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Descobrir ano chinês!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css"> 
+		.container { max-width: 600px; } 
+		#resultado { font-size: 30px; text-align: center; margin-top: 20px; background: black; color: white; }
+	</style>
+</head>
+<body class="container">
+	<ul class="nav nav-tabs">
+	  <li><a href="index.html">1. Nome Ninja</a></li>
+	  <li><a href="index-2.html">2. Nome de Terror</a></li>
+	  <li><a href="index-3.html">3. Jogo do Sim ou Não</a></li>
+	  <li><a href="index-4.html">4. Calcular média aula JS</a></li>
+	  <li><a href="index-5.html">5. Descobrir ano chinês</a></li>
+	</ul>
+	
+	<h2>Descobrir ano chinês!</h2><br> 
+	
+	<form onsubmit="return false;">
+		<div class="form-group">
+			<label>Selecione o ano em que você nasceu:</label>
+			<select class="form-control" id="ano">
+			</select>
+		</div>
+	  <button type="submit" class="btn btn-primary" onclick="descobrirAnoChines()">Mostrar</button>
+	</form>
+	
+	<div id="resultado"></div>
+	
+<script type="text/javascript">
+/*
+ * Inserir ano 1960 ao 2020 no select #ano.
+ */ 
+var selectAno = document.getElementById('ano');
+
+for (var i = 1960; i<=2020; i++){
+    var opt = document.createElement('option'); // <option></option>
+    opt.value = i; // <option value="i"></option>
+    opt.innerHTML = i; // <option value="i">i</option>
+    selectAno.appendChild(opt); // Adiciona o <option> criado em <select id="dia">
+}
+
+/*
+ * Função para descobrir ano chines.
+ */
+function descobrirAnoChines(){
+	var animals = ['Ovelha', 'Galo', 'Cão ', 'Porco', 'Rato', 'Boi', 'Tigre', 'Lebre', 'Dragão', 'Serpente', 'Cavalo'];
+	var anoSelecionado = document.getElementById("ano").value;
+	
+	console.log( anoSelecionado%12 );
+	
+	var resultado = animals[anoSelecionado%12];
+	
+	document.getElementById("resultado").innerHTML = 'Seu ano chinês é o ' + resultado;
+}
+</script>
+	
+</body>
+</html>
