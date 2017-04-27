@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nome Ninja!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css"> 
+		.container { max-width: 600px; } 
+		#resultado { font-size: 30px; text-align: center; margin-top: 20px; background: black; color: white; }
+	</style>
+</head>
+<body class="container">
+	<ul class="nav nav-tabs">
+	  <li><a href="index.html">1. Nome Ninja</a></li>
+	  <li><a href="index-2.html">2. Nome de Terror</a></li>
+	  <li><a href="index-3.html">3. Jogo do Sim ou Não</a></li>
+	  <li><a href="index-4.html">4. Calcular média aula JS</a></li>
+	  <li><a href="index-5.html">5. Descobrir ano chinês</a></li>
+	</ul>
+	
+	<h2>Descubra seu nome Ninja!</h2><br> 
+	
+	<form class="form-inline " onsubmit="return false;">
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="nome">
+	  </div>
+	  <button type="submit" class="btn btn-primary" onclick="descobrirNomeNinja()">Mostrar</button>
+	</form>
+	
+	<div id="resultado"></div>
+	
+	<script type="text/javascript">
+		function descobrirNomeNinja(){
+			var nome = document.getElementById("nome").value.toUpperCase();
+			var aux = '';
+			
+			// nome[0] = T | '' + CHI
+			// nome[1] = E | CHI + KU
+			// nome[3] = D | CHIKU + TE
+			// CHIKUTE
+			
+			for ( index in nome ) {
+				
+				var letra = nome[index];
+				
+				switch(letra) {
+				    case 'A': aux += 'KA'; break;
+				    case 'B': aux += 'TU'; break;
+				    case 'C': aux += 'MI'; break;
+				    case 'D': aux += 'TE'; break;
+				    case 'E': aux += 'KU'; break;
+				    case 'F': aux += 'LU'; break;
+				    case 'G': aux += 'JI'; break;
+				    case 'H': aux += 'RI'; break;
+				    case 'I': aux += 'KI'; break;
+				    case 'J': aux += 'ZU'; break;
+				    case 'K': aux += 'ME'; break;
+				    case 'L': aux += 'TA'; break;
+				    case 'M': aux += 'RIN'; break;
+				    case 'N': aux += 'TO'; break;
+				    case 'O': aux += 'MO'; break;
+				    case 'P': aux += 'NO'; break;
+				    case 'Q': aux += 'KE'; break;
+				    case 'R': aux += 'SHI'; break;
+				    case 'S': aux += 'ARI'; break;
+				    case 'T': aux += 'CHI'; break;
+				    case 'U': aux += 'DO'; break;
+				    case 'V': aux += 'RU'; break;
+				    case 'X': aux += 'NA'; break;
+				    case 'W': aux += 'MEI'; break;
+				    case 'Y': aux += 'FU'; break;
+				    case 'Z': aux += 'RA'; break;
+				    default: false;
+				}
+				
+			} // endfor.
+			
+			document.getElementById("resultado").innerHTML = aux;
+		}
+	</script>
+</body>
+</html>
