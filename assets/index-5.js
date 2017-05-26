@@ -14,7 +14,7 @@ for (var i = 1960; i<=2020; i++){
  * Função para descobrir ano chines.
  */
 function descobrirAnoChines(){
-	var animals = ['Ovelha', 'Galo', 'Cão ', 'Porco', 'Rato', 'Boi', 'Tigre', 'Lebre', 'Dragão', 'Serpente', 'Cavalo'];
+	var animals = ['Macaco', 'Galo', 'Cão', 'Porco', 'Rato', 'Boi', 'Tigre', 'Lebre', 'Dragão', 'Serpente', 'Cavalo', 'Ovelha'];
 	var anoSelecionado = document.getElementById("ano").value;
 	
 	console.log( anoSelecionado%12 );
